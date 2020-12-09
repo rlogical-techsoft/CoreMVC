@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CoreMVC.Models;
+using NetCoreWebApp.Models;
 
 namespace CoreMVC.Controllers
 {
@@ -20,13 +21,10 @@ namespace CoreMVC.Controllers
 
         public IActionResult Index()
         {
-            EmployeeModel emp = new EmployeeModel()
-            {
-                Id = 1,
-                Employees = new List<string> { "Jason De Oliveira", "Michel Bruchet" }
-            };
+            // Azuretutorialsdb context = HttpContext.RequestServices.GetService(typeof(NetCoreWebApp.Models.Azuretutorialsdb)) as Azuretutorialsdb;
 
-            return View(emp);
+            //return View(context.GetAllAlbums());
+            return View();
         }
 
         public IActionResult Privacy()
